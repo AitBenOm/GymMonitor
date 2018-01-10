@@ -19,7 +19,8 @@ export class ProgramListComponent implements OnInit {
     (program: ProgramModel)=>{
       this.programs.push(program);
     }
-    )
+    );
+    console.log(this.programs);
   }
 
   onShowDetail(id: number){

@@ -45,19 +45,10 @@ export class ProgramService {
         new LoadsModel(1, '50', this.getToDayString())])
     ]),
 
-    new ProgramModel(2, 'Deck', this.getToDayString(), this.getToDayString(), [
-      new ExerciseModel(1, "peck fly", [
-        new LoadsModel(1, '40', this.getToDayString()),
-        new LoadsModel(1, '50', this.getToDayString())])
-    ]), new ProgramModel(2, 'Deck', this.getToDayString(), this.getToDayString(), [
-      new ExerciseModel(1, "peck fly", [
-        new LoadsModel(1, '40', this.getToDayString()),
-        new LoadsModel(1, '50', this.getToDayString())])
-    ]), new ProgramModel(2, 'Deck', this.getToDayString(), this.getToDayString(), [
-      new ExerciseModel(1, "peck fly", [
-        new LoadsModel(1, '40', this.getToDayString()),
-        new LoadsModel(1, '50', this.getToDayString())])
+    new ProgramModel(2, 'Jambe', this.getToDayString(), this.getToDayString(), [
+
     ]),
+
     new ProgramModel(3, 'Biceps', this.getToDayString(), this.getToDayString(), [new ExerciseModel(1, "tirage biceps", [
       new LoadsModel(1, '18', this.getToDayString()),
       new LoadsModel(1, '20', this.getToDayString()),
