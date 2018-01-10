@@ -22,6 +22,7 @@ import { ProgramItemComponent } from './program/program-list/program-item/progra
 import {ProgramService} from "./program/program.service";
 import { ExerciseListComponent } from './exercise/exercise-list/exercise-list.component';
 import {ExerciseService} from "./exercise/exercise.service";
+import { AddExerciseComponent } from './exercise/add-exercise/add-exercise.component';
 
 
 
@@ -42,7 +43,8 @@ import {ExerciseService} from "./exercise/exercise.service";
     ProgramListComponent,
     ProgramDetailComponent,
     ProgramItemComponent,
-    ExerciseListComponent
+    ExerciseListComponent,
+    AddExerciseComponent
 
 
 

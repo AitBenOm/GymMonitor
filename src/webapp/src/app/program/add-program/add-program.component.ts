@@ -13,7 +13,7 @@ export class AddProgramComponent implements OnInit {
   constructor(private programService: ProgramService) { }
   programTitle: string;
   program: ProgramModel;
-  exercises: any[];
+  exercises: ExerciseModel[]=null;
   ngOnInit() {
   }
 
@@ -34,12 +34,13 @@ export class AddProgramComponent implements OnInit {
   }
   onAddProgram(){
 
-
+console.log(this.exercises);
 this.programService.onProgramAdded.emit(new ProgramModel(this.programService.programs.length,
   this.programTitle,
   this.getToDayString(),
   this.getToDayString(),
   this.exercises
   ));
+this.programTitle='';
   }
 }

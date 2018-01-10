@@ -12,6 +12,7 @@ export class ProgramService {
   }
 
   onProgramAdded= new EventEmitter<ProgramModel>();
+  onProgramChosen= new EventEmitter<ProgramModel>();
   exerciseToShow = new Subject<ExerciseModel>();
 
   getToDayString() {

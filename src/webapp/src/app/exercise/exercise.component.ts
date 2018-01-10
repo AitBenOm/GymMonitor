@@ -25,7 +25,11 @@ export class ExerciseComponent implements OnInit {
   }
 
   ngOnInit() {
-
+this.programService.onProgramChosen.subscribe(
+  () =>{
+    this.exercise=null;
+    }
+)
   }
 
 }

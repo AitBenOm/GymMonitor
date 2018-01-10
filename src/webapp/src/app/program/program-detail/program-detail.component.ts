@@ -34,6 +34,7 @@ export class ProgramDetailComponent implements OnInit {
           this.program = this.programService.getProgramById(this.id);
         }
       );
+this.programService.exerciseToShow.next(null);
 
   }
   onShowDetail(exercise:ExerciseModel){

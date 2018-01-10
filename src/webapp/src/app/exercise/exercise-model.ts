@@ -12,6 +12,8 @@ export class ExerciseModel {
     this._loads = loads;
   }
 
+
+
   get loads(): LoadsModel[] {
     return this._loads;
   }
