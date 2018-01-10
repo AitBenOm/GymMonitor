@@ -15,6 +15,11 @@ export class ProgramListComponent implements OnInit {
 
   ngOnInit() {
     this.programs=this.programService.programs;
+    this.programService.onProgramAdded.subscribe(
+    (program: ProgramModel)=>{
+      this.programs.push(program);
+    }
+    )
   }
 
   onShowDetail(id: number){

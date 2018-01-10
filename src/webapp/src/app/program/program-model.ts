@@ -15,6 +15,7 @@ export class ProgramModel {
   private  _exercises: ExerciseModel[];
 
 
+
   constructor(id: number, name: string, creationDate: string, lastModification: string, exercises: ExerciseModel[]) {
     this._id = id;
     this._name = name;
@@ -32,11 +33,14 @@ export class ProgramModel {
     this._exercises = value;
   }
 
+
   get id(): number {
     return this._id;
   }
 
-
+  set id(value: number) {
+    this._id = value;
+  }
 
   get name(): string {
     return this._name;

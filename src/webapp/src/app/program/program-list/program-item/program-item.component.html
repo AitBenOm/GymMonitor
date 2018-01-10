@@ -2,6 +2,7 @@
   <div id="tasksPanel" class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">My Programs</h3>
+
       <table class="table">
         <thead>
         <tr>
@@ -14,17 +15,19 @@
         </thead>
         <tbody>
 
-<tr style="cursor: pointer" *ngFor="let program of programs; let i=index" >
-  <th scope="row">{{program.id}}</th>
-  <td><a [routerLink]="[i]">{{program.name}}</a></td>
-  <td>{{program.creationDate}}</td>
-  <td>{{program.lastModification}}</td>
+        <tr style="cursor: pointer" *ngFor="let program of programs; let i=index">
+          <th scope="row">{{program.id}}</th>
+          <td><a [routerLink]="[i]">{{program.name}}</a></td>
+          <td>{{program.creationDate}}</td>
+          <td>{{program.lastModification}}</td>
 
-</tr>
+        </tr>
         </tbody>
       </table>
+
+      <app-add-program *ngIf="true"></app-add-program>
+
     </div>
   </div>
-</div>
 
 

@@ -1,3 +1,7 @@
-<p>
-  add-program works!
-</p>
+<div class="form-inline">
+  <div class="form-group">
+
+    <input type="text" [(ngModel)]="programTitle" name="program" class="form-control" id="program" placeholder="Program" required>
+  </div>
+  <button type="submit" (click)="onAddProgram()" class="btn btn-primary glyphicon glyphicon-plus"></button>
+</div>
