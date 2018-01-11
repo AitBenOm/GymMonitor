@@ -12,7 +12,7 @@ import {Subscription} from "rxjs/Subscription";
 export class ExerciseComponent implements OnInit {
 
   exercise: ExerciseModel;
-
+  subsrciption: Subscription;
   constructor(private programService: ProgramService) {
 
    this.programService.exerciseToShow.subscribe(

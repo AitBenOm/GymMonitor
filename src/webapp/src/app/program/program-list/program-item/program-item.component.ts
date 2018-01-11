@@ -14,7 +14,7 @@ export class ProgramItemComponent implements OnInit {
   @Input() programs: ProgramModel;
   @Input() index: number;
   ngOnInit() {
-    this.programService.exerciseToShow.
+   /* this.programService.exerciseToShow.emit(null);*/
   }
 
 }

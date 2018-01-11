@@ -13,7 +13,7 @@ export class ProgramService {
 
   onProgramAdded= new EventEmitter<ProgramModel[]>();
   onProgramChosen= new EventEmitter<ProgramModel>();
-  exerciseToShow: EventEmitter<any> = new EventEmitter();
+  exerciseToShow = new EventEmitter<ExerciseModel>();
 
   getToDayString() {
     let toDay = new Date();

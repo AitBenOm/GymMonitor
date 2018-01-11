@@ -5,6 +5,7 @@ import {ProgramModel} from "../program-model";
 import {ExerciseModel} from "../../exercise/exercise-model";
 import {ExerciseService} from "../../exercise/exercise.service";
 import {Subject} from "rxjs/Subject";
+import {Subscription} from "rxjs/Subscription";
 
 @Component({
   selector: 'app-program-detail',
@@ -17,7 +18,7 @@ export class ProgramDetailComponent implements OnInit {
   program: ProgramModel;
 
   showDetail: boolean = false;
-
+subscription: Subscription;
 
 
   constructor(private programService: ProgramService,
@@ -32,9 +33,15 @@ export class ProgramDetailComponent implements OnInit {
         (params: Params) => {
           this.id = +params['id'];
           this.program = this.programService.getProgramById(this.id);
+
+          this.programService.exerciseToShow.next(null);
         }
       );
-this.programService.exerciseToShow.next(null);
+/*this.subscription= this.exerciseService.onExerciseAdded.subscribe(
+  (exercises: ExerciseModel[])=>{
+    this.program.exercises.push(exercises[exercises.length-1]);
+  }
+)*/
 
 
   }
