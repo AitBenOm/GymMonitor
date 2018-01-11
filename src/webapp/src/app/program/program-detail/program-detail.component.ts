@@ -36,6 +36,7 @@ export class ProgramDetailComponent implements OnInit {
       );
 this.programService.exerciseToShow.next(null);
 
+
   }
   onShowDetail(exercise:ExerciseModel){
     console.log("program-detail "+exercise.name);

@@ -1,0 +1,7 @@
+<div class="input-group">
+
+  <input type="text" [(ngModel)]="exerciseTitle" name="exercise" class="form-control" placeholder="New Exercise...">
+  <span class="input-group-btn">
+        <button (click)="onAddExercise()" class="btn btn-secondary glyphicon glyphicon-plus" type="button" [disabled]="exerciseTitle===''"></button>
+      </span>
+</div>

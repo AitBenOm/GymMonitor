@@ -1,6 +1,6 @@
 import {EventEmitter, Injectable} from '@angular/core';
 import {ProgramModel} from "./program-model";
-import {getTemplate} from "codelyzer/util/ngQuery";
+
 import {ExerciseModel} from "../exercise/exercise-model";
 import {LoadsModel} from "../exercise/loads-model";
 import {Subject} from "rxjs/Subject";
@@ -11,9 +11,9 @@ export class ProgramService {
   constructor() {
   }
 
-  onProgramAdded= new EventEmitter<ProgramModel>();
+  onProgramAdded= new EventEmitter<ProgramModel[]>();
   onProgramChosen= new EventEmitter<ProgramModel>();
-  exerciseToShow = new Subject<ExerciseModel>();
+  exerciseToShow: EventEmitter<any> = new EventEmitter();
 
   getToDayString() {
     let toDay = new Date();
@@ -60,6 +60,10 @@ export class ProgramService {
   ];
 
   getProgramById(id: number) {
+    console.log("l'id du programme "+ id);
+    console.log("le nombre de program "+ this.programs.length);
+    console.log("la liste des programmes "+ this.programs);
+    console.log("le programme "+ this.programs[id]);
     return this.programs[id];
   }
 
@@ -68,5 +72,7 @@ export class ProgramService {
   }
 addProgram(program: ProgramModel){
     this.programs.push(program);
+    //this.onProgramAdded.emit(this.programs);
+  console.log(this.programs);
 }
 }

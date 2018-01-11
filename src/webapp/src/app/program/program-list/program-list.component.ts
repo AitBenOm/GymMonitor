@@ -5,8 +5,8 @@ import {ProgramModel} from "../program-model";
 @Component({
   selector: 'app-program-list',
   templateUrl: './program-list.component.html',
-  styleUrls: ['./program-list.component.css'],
-  providers: [ProgramService]
+  styleUrls: ['./program-list.component.css']
+
 })
 export class ProgramListComponent implements OnInit {
 
@@ -20,6 +20,11 @@ export class ProgramListComponent implements OnInit {
       this.programs.push(program);
     }
     );
+  /* this.programs=this.programService.onProgramAdded.subscribe(
+     (programs: ProgramModel[])=>{
+       this.programs=programs;
+     }
+   );*/
     console.log(this.programs);
   }
 

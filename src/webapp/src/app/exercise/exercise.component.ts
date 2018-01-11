@@ -12,13 +12,14 @@ import {Subscription} from "rxjs/Subscription";
 export class ExerciseComponent implements OnInit {
 
   exercise: ExerciseModel;
-  subsrciption: Subscription;
+
   constructor(private programService: ProgramService) {
 
-   this.subsrciption= programService.exerciseToShow.subscribe(
+   this.programService.exerciseToShow.subscribe(
      (exercise: ExerciseModel) =>{
-       console.log(this.exercise);
+
        this.exercise=exercise;
+       console.log(this.exercise);
      }
    )
 

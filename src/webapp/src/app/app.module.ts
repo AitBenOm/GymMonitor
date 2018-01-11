@@ -20,9 +20,10 @@ import { ProgramListComponent } from './program/program-list/program-list.compon
 import { ProgramDetailComponent } from './program/program-detail/program-detail.component';
 import { ProgramItemComponent } from './program/program-list/program-item/program-item.component';
 import {ProgramService} from "./program/program.service";
-import { ExerciseListComponent } from './exercise/exercise-list/exercise-list.component';
+
 import {ExerciseService} from "./exercise/exercise.service";
 import { AddExerciseComponent } from './exercise/add-exercise/add-exercise.component';
+
 
 
 
@@ -43,10 +44,8 @@ import { AddExerciseComponent } from './exercise/add-exercise/add-exercise.compo
     ProgramListComponent,
     ProgramDetailComponent,
     ProgramItemComponent,
-    ExerciseListComponent,
+
     AddExerciseComponent
-
-
 
 
   ],

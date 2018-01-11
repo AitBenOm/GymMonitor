@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ProgramService} from "../program.service";
 import {ProgramModel} from "../program-model";
 import {ExerciseModel} from "../../exercise/exercise-model";
+import {LoadsModel} from "../../exercise/loads-model";
 
 @Component({
   selector: 'app-add-program',
@@ -11,9 +12,19 @@ import {ExerciseModel} from "../../exercise/exercise-model";
 export class AddProgramComponent implements OnInit {
 
   constructor(private programService: ProgramService) { }
-  programTitle: string;
+  programTitle: string='';
+  exerciseTitle: string='';
+  load: string='';
+
+  programAdded: boolean=false;
+  exerciseAdded: boolean=false;
+  onExerciseAdded: boolean=true;
+
   program: ProgramModel;
-  exercises: ExerciseModel[]=null;
+  exercise: ExerciseModel;
+  exercises: ExerciseModel[]=[
+
+  ];
   ngOnInit() {
   }
 
@@ -29,18 +40,28 @@ export class AddProgramComponent implements OnInit {
     if (mm<10){
       mm='0'+mm;
     }
-
+console.log( mm+'/'+dd+'/'+yyyy);
     return mm+'/'+dd+'/'+yyyy;
   }
   onAddProgram(){
+    this.programAdded=true;
 
-console.log(this.exercises);
-this.programService.onProgramAdded.emit(new ProgramModel(this.programService.programs.length,
-  this.programTitle,
-  this.getToDayString(),
-  this.getToDayString(),
-  this.exercises
-  ));
-this.programTitle='';
+  }
+  onAddExercise(){
+    this.exerciseAdded=true;
+  }
+onSaveProgram (){
+    let nbPrograms= this.programService.programs.length;
+  this.programService.addProgram(
+    new ProgramModel(nbPrograms+1, this.programTitle, this.getToDayString(), this.getToDayString(), [new ExerciseModel(1, this.exerciseTitle, [
+      new LoadsModel(1, this.load, this.getToDayString())])
+    ])
+  );
+  this.programTitle='';
+  this.load='';
+  this.exerciseTitle='';
+
+  this.programAdded=false;
+  this.exerciseAdded=false;
   }
 }

@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ProgramModel} from "../../program-model";
+import {ProgramService} from "../../program.service";
 
 @Component({
   selector: 'app-program-item',
@@ -9,10 +10,11 @@ import {ProgramModel} from "../../program-model";
 export class ProgramItemComponent implements OnInit {
 
 
-  constructor() { }
+  constructor(private programService: ProgramService) { }
   @Input() programs: ProgramModel;
   @Input() index: number;
   ngOnInit() {
+    this.programService.exerciseToShow.
   }
 
 }

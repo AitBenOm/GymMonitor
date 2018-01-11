@@ -20,9 +20,9 @@ const appRoutes: Routes = [
   {path: 'program', component: ProgramComponent, children: [
     { path: ':id', component: ProgramDetailComponent },
   ]},
-  {path: 'exercise', component: ExerciseComponent, children: [
+/*  {path: 'exercise', component: ExerciseComponent, children: [
     { path: ':id', component: ExerciseListComponent },
-  ]},
+  ]},*/
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
 
