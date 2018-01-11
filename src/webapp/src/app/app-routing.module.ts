@@ -9,7 +9,7 @@ import {AppComponent} from "./app.component";
 import {ProgramComponent} from "./program/program.component";
 import {ProgramDetailComponent} from "./program/program-detail/program-detail.component";
 import {ExerciseComponent} from "./exercise/exercise.component";
-import {ExerciseListComponent} from "./exercise/exercise-list/exercise-list.component";
+
 
 
 

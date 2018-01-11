@@ -43,12 +43,12 @@ this.exercises.push(
   ])
 );
 this.exerciseServise.onExerciseAdded.next(this.exercises);
-
     this.load='';
     this.exerciseTitle='';
 
 
-    this.exerciseAdded=false;}
+    this.exerciseAdded=false;
+  }
   ngOnInit() {
   }
 

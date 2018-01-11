@@ -23,6 +23,7 @@ import {ProgramService} from "./program/program.service";
 
 import {ExerciseService} from "./exercise/exercise.service";
 import { AddExerciseComponent } from './exercise/add-exercise/add-exercise.component';
+import { AddLoadComponent } from './exercise/add-load/add-load.component';
 
 
 
@@ -45,7 +46,9 @@ import { AddExerciseComponent } from './exercise/add-exercise/add-exercise.compo
     ProgramDetailComponent,
     ProgramItemComponent,
 
-    AddExerciseComponent
+    AddExerciseComponent,
+
+    AddLoadComponent
 
 
   ],
