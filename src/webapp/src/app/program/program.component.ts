@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ProgramService} from "./program.service";
 
 @Component({
   selector: 'app-program',
@@ -7,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProgramComponent implements OnInit {
 
-  constructor() { }
+  constructor(private programService: ProgramService) { }
 
 
   ngOnInit() {
+console.log("init Program");
+    this.programService.exerciseToShow.next(null);
   }
 
 }

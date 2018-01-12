@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators} from "@angular/forms";
 import {UserService} from "../../user/user.service";
 import {UserModel} from "../../user/user.model";
+import {AuthService} from "../auth.service";
 
 @Component({
   selector: 'app-register',
@@ -10,10 +11,11 @@ import {UserModel} from "../../user/user.model";
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private authService: AuthService) { }
 
 
   registerForm: FormGroup;
+  newUser: UserModel;
 
   ngOnInit() {
     this.registerForm= new FormGroup({
@@ -36,9 +38,14 @@ export class RegisterComponent implements OnInit {
   onRegister(){
     console.log("Registering User");
 console.log(this.registerForm);
-  this.userService.addUser(new UserModel(this.userService.users.length+1,this.registerForm.get('firstName').value,
+
+  /*this.userService.addUser(new UserModel(this.userService.users.length+1,this.registerForm.get('firstName').value,
     this.registerForm.get('lastName').value,this.registerForm.get('email').value,
-    this.registerForm.get('pwdGroup').get("pwd1").value));
+    this.registerForm.get('pwdGroup').get("pwd1").value));*/
+this.newUser= new UserModel(this.userService.users.length+1,this.registerForm.get('firstName').value,
+    this.registerForm.get('lastName').value,this.registerForm.get('email').value,
+    this.registerForm.get('pwdGroup').get("pwd1").value);
+    this.authService.register(this.newUser.email, this.newUser.pwd);
 this.registerForm.reset();
   }
 
