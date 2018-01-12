@@ -27,6 +27,12 @@ login(email: string, pwd: string){
     );
 }
 
+logout(){
+  firebase.auth().signOut();
+  this.token=null;
+  this.router.navigate(['login']);
+}
+
 getToken(){
  firebase.auth().currentUser.getToken().then(
    (token:string)=>{

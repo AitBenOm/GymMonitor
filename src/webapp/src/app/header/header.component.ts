@@ -16,5 +16,8 @@ console.log(this.authServise.isAuthenticated());
     this.isAuthenticated=this.authServise.isAuthenticated();
 
   }
+  onLogout(){
+    this.authServise.logout();
+  }
 
 }
