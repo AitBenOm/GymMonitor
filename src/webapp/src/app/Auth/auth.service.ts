@@ -5,6 +5,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 @Injectable()
 export class AuthService {
 token: string=null;
+
   constructor(private router: Router, private route: ActivatedRoute ) { }
 
   register(email: string, pwd: string){
@@ -18,8 +19,13 @@ login(email: string, pwd: string){
         this.router.navigate(['/']);
         firebase.auth().currentUser.getToken()
           .then(
-            (token: string)=> this.token= token
+            (token: string)=>{
+              this.token= token;
+           //   console.log("My Token "+ this.token);
+              localStorage.setItem('currentUser',this.token);
+            }
           );
+
         console.log(response);
       }
     ).catch(
@@ -43,7 +49,20 @@ getToken(){
 }
 
 isAuthenticated(){
-  return this.token!= null;
+
+  let localStorageSession= localStorage['currentUser'];
+console.log("CurrentUser "+ localStorageSession);
+let tokenTest=null;
+  firebase.auth().currentUser.getToken()
+    .then(
+      (token: string)=>{
+        tokenTest= token;
+        //   console.log("My Token "+ this.token);
+      }
+    );
+  console.log("My Token "+ tokenTest);
+  console.log(tokenTest === localStorage.getItem('currentUser'));
+  return this.token === localStorage.getItem('currentUser');
 }
 
 }

@@ -9,6 +9,8 @@ import {AppComponent} from "./app.component";
 import {ProgramComponent} from "./program/program.component";
 import {ProgramDetailComponent} from "./program/program-detail/program-detail.component";
 import {ExerciseComponent} from "./exercise/exercise.component";
+import {AuthGuard} from "./Auth/auth.guard";
+import {HomeComponent} from "./home/home.component";
 
 
 
@@ -16,14 +18,15 @@ import {ExerciseComponent} from "./exercise/exercise.component";
 const appRoutes: Routes = [
   // { path: '', redirectTo: '/recipes', pathMatch: 'full' },
   //{ path: 'recipes', loadChildren: './recipes/recipes.module.ts#RecipesModule'},
-  {path: '', redirectTo: '/program', pathMatch: 'full' },
+  {path: '', redirectTo: '/home', pathMatch: 'full' },
   {path: 'program', component: ProgramComponent, children: [
-    { path: ':id', component: ProgramDetailComponent },
-  ]},
+    { path: ':id', component: ProgramDetailComponent, },
+  ],canActivate:[AuthGuard]},
 /*  {path: 'exercise', component: ExerciseComponent, children: [
     { path: ':id', component: ExerciseListComponent },
   ]},*/
   { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'register', component: RegisterComponent },
 
 ];

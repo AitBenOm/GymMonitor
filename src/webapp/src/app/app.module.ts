@@ -25,6 +25,8 @@ import {ExerciseService} from "./exercise/exercise.service";
 import { AddExerciseComponent } from './exercise/add-exercise/add-exercise.component';
 import { AddLoadComponent } from './exercise/add-load/add-load.component';
 import {AuthService} from "./Auth/auth.service";
+import {AuthGuard} from "./Auth/auth.guard";
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -49,7 +51,9 @@ import {AuthService} from "./Auth/auth.service";
 
     AddExerciseComponent,
 
-    AddLoadComponent
+    AddLoadComponent,
+
+    HomeComponent
 
 
   ],
@@ -59,7 +63,7 @@ import {AuthService} from "./Auth/auth.service";
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [UserService,ProgramService,ExerciseService,AuthService],
+  providers: [UserService,ProgramService,ExerciseService,AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
