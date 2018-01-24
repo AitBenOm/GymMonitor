@@ -12,6 +12,7 @@ firebase.initializeApp({
   apiKey: "AIzaSyC2pAckrLKe5gyQuG6N7pBvbQcRE9SQN00",
   authDomain: "gymmonitor-507c4.firebaseapp.com",
 });
+
   }
   title = 'app';
 }

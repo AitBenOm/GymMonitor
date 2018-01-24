@@ -16,7 +16,7 @@ firebase.auth().createUserWithEmailAndPassword(email, pwd).catch(
 login(email: string, pwd: string){
     firebase.auth().signInWithEmailAndPassword(email,pwd).then(
       (response: Response)=>{
-        this.router.navigate(['/']);
+        this.router.navigate(['program']);
         firebase.auth().currentUser.getToken()
           .then(
             (token: string)=>{
@@ -50,7 +50,7 @@ getToken(){
 
 isAuthenticated(){
 
-  let localStorageSession= localStorage['currentUser'];
+  /*let localStorageSession= localStorage['currentUser'];
 console.log("CurrentUser "+ localStorageSession);
 let tokenTest=null;
   firebase.auth().currentUser.getToken()
@@ -62,7 +62,8 @@ let tokenTest=null;
     );
   console.log("My Token "+ tokenTest);
   console.log(tokenTest === localStorage.getItem('currentUser'));
-  return this.token === localStorage.getItem('currentUser');
+  return this.token === localStorage.getItem('currentUser');*/
+  return this.token!=null;
 }
 
 }

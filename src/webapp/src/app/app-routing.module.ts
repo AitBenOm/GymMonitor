@@ -18,7 +18,7 @@ import {HomeComponent} from "./home/home.component";
 const appRoutes: Routes = [
   // { path: '', redirectTo: '/recipes', pathMatch: 'full' },
   //{ path: 'recipes', loadChildren: './recipes/recipes.module.ts#RecipesModule'},
-  {path: '', redirectTo: '/home', pathMatch: 'full' },
+  {path: '', redirectTo: '/login', pathMatch: 'full' },
   {path: 'program', component: ProgramComponent, children: [
     { path: ':id', component: ProgramDetailComponent, },
   ],canActivate:[AuthGuard]},
