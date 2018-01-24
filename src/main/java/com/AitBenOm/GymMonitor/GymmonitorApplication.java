@@ -1,4 +1,4 @@
-package com.gymmonitor.gymmonitor;
+package com.AitBenOm.GymMonitor;
 
 import com.AitBenOm.GymMonitor.DAO.ProgramRepository;
 import com.AitBenOm.GymMonitor.entities.Exercise;
@@ -9,17 +9,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
 @SpringBootApplication
-@ComponentScan("com.AitBenOm.GymMonitor")
+
 public class GymmonitorApplication implements CommandLineRunner {
 
 
+	@Autowired
 	private ProgramRepository programRepository;
 	public List<Exercise> exercises;
 

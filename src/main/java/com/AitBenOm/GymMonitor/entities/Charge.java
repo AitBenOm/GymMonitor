@@ -4,20 +4,24 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-public class Load {
+public class Charge {
 
     @Id
     @GeneratedValue
     private Long idLoad;
-    private String load;
+    private String charge;
     @Temporal(TemporalType.DATE)
     private Date lastModification;
 
-    public Load() {
+    @ManyToOne
+    @JoinColumn(name = "idExercise")
+    private Exercise exercise;
+
+    public Charge() {
     }
 
-    public Load(String load, Date lastModification) {
-        this.load = load;
+    public Charge(String load, Date lastModification) {
+        this.charge = load;
         this.lastModification = lastModification;
     }
 
@@ -30,11 +34,11 @@ public class Load {
     }
 
     public String getLoad() {
-        return load;
+        return charge;
     }
 
     public void setLoad(String load) {
-        this.load = load;
+        this.charge = load;
     }
 
     public Date getLastModification() {

@@ -1,8 +1,6 @@
 package com.AitBenOm.GymMonitor.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import java.util.List;
 
@@ -12,14 +10,20 @@ public class Exercise {
     @GeneratedValue
     private Long idExercise;
    private String exerciseName;
-   private List<Load> loadList;
+
+    @OneToMany(mappedBy = "exercise")
+   private List<Charge> chargeList;
+
+    @ManyToOne
+    @JoinColumn(name = "idProgram")
+      private Program program;
 
     public Exercise() {
     }
 
-    public Exercise(String exerciseName, List<Load> loadList) {
+    public Exercise(String exerciseName, List<Charge> chargeList) {
         this.exerciseName = exerciseName;
-        this.loadList = loadList;
+        this.chargeList = chargeList;
     }
 
     public Long getIdExercise() {
@@ -38,11 +42,11 @@ public class Exercise {
         this.exerciseName = exerciseName;
     }
 
-    public List<Load> getLoadList() {
-        return loadList;
+    public List<Charge> getChargeList() {
+        return chargeList;
     }
 
-    public void setLoadList(List<Load> loadList) {
-        this.loadList = loadList;
+    public void setChargeList(List<Charge> chargeList) {
+        this.chargeList = chargeList;
     }
 }

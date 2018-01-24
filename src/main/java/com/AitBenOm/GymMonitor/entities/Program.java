@@ -10,11 +10,20 @@ public class Program {
     @Id
     @GeneratedValue
     private Long idProgram;
+
     private String programName;
+
     @Temporal(TemporalType.DATE)
     private Date dateOfCreation;
+
     @Temporal(TemporalType.DATE)
     private Date lastModification;
+
+    @ManyToOne
+    @JoinColumn(name = "idUser")
+    private User user;
+
+    @OneToMany(mappedBy = "program")
     private List<Exercise> exerciseList;
 
     public Program() {

@@ -3,6 +3,7 @@ package com.AitBenOm.GymMonitor.entities;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.List;
 
 @Entity
@@ -10,10 +11,13 @@ public class User {
     @Id
     @GeneratedValue
     private Long idUser;
+
     private String userName;
     private String lastName;
     private String email;
     private String pwd;
+
+    @OneToMany(mappedBy="user")
     private List<Program> programList;
 
     public User() {
